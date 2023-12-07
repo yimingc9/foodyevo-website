@@ -2,6 +2,7 @@ import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
+import ImageUploadComponent from '/components/meal_upload';
 
 import { benefitOne, benefitTwo } from "../components/data";
 import Video from "../components/video";
@@ -26,6 +27,7 @@ const Home = () => {
 
       <Navbar />
       <Hero />
+      <ImageUploadComponent />
       {/* <SectionTitle
         pretitle="Nextly Benefits"
         title=" Why should you use this landing page">

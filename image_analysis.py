@@ -19,6 +19,8 @@ pip3 install nest_asyncio
 """
 
 # SET UP YOUR OPENAI CLIENT
+
+
 def set_openai_env(api_key):
     os.environ['OPENAI_API_KEY'] = api_key  # SET YOUR OWN API KEY
 
@@ -44,7 +46,7 @@ def api_call(image_url, model='gpt-4-vision-preview'):
                     {
                         "type": "image_url",
                         "image_url": {
-                            "url": image_url,
+                            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg",
                         },
                     },
                 ],
@@ -57,8 +59,7 @@ def api_call(image_url, model='gpt-4-vision-preview'):
     return response_content
 
 
-CLIENT = set_openai_env('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')
+CLIENT = set_openai_env('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')
 with open('images/image_list.txt', 'r') as f:
     for image_link in f:
         print(api_call(image_link))
-
